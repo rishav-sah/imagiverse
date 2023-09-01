@@ -5,33 +5,26 @@ import PhotoCard from "./PhotoCard";
 import Search from "./Search";
 
 const PhotoGrid = () => {
-  const [listOfPhotos, setListOfPhotos] = useState(data);
-  const [searchInput, setSearchInput] = useState("");
-  
+  const [listOfPhotos, setListOfPhotos] = useState([]);
+
   console.log("PhotoGrid Component Rendered");
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  // const fetchData = async () => {
-  //   const data = await getPhotosList();
-  //   setListOfPhotos(data);
-  // };
-
-  const searchPhotos = (search) => {
-    setSearchInput(search)
+  const fetchData = async () => {
+    const data = await getPhotosList();
+    return setListOfPhotos(data);
   };
-
-  console.log(searchInput);
 
   return (
     <section className="p-4 grid md:place-items-center">
-      <Search search={searchPhotos} />
+      <Search getSearchedPhotos={setListOfPhotos} />
       <div className="sm:columns-2 md:columns-3 max-w-7xl">
         {
           listOfPhotos.map((res) => {
-            return (<PhotoCard key={res.id} resInfo={res} />)
+            return (<PhotoCard key={res.id} resInfo={res} />);
           })
         }
       </div>

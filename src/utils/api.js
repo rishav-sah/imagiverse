@@ -20,3 +20,13 @@ export const getPhotosList = async () => {
   });
   return response.data;
 };
+
+export const getCollections = async (term) => {
+  const response = await api.get("/search/collections", {
+    params: {
+      query: term,
+      per_page: 30,
+    },
+  });
+  return response.data;
+};

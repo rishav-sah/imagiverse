@@ -1,17 +1,23 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
+import { getCollections } from "../utils/api";
 
-const Search = ({ search }) => {
+const Search = ({ getSearchedPhotos }) => {
 
   const [searchInput, setSearchInput] = useState("");
 
+  const getPhotoCollections = async (term) => {
+    const data = await getCollections(term);
+    getSearchedPhotos(data.results);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    search(searchInput);
+    getPhotoCollections(searchInput);
   };
 
   return (
-    <div className="my-4 w-[32rem]">
+    <div className="mx-auto my-4 w-[32rem]">
       <form onSubmit={handleSubmit}>
         <label
           htmlFor="default-search"

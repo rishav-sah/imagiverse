@@ -23,6 +23,7 @@ Currently, two official plugins are available:
 │   │   ├── Header/
 │   │   ├── PhotoGrid/
 │   │   ├── PhotoCard/
+│   │   ├── Search/
 │   │   └── ...
 │   ├── pages/
 │   │   ├── About.jsx

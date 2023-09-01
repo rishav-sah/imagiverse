@@ -1,9 +1,8 @@
-const PhotoCard = (props) => {
-  const { urls, alt_description } = props.resInfo;
+const PhotoCard = ({ resInfo }) => {
   return (
     <div>
       <figure className="mb-4">
-        <img src={urls?.small} className="bg-cover w-full" alt={alt_description} />
+        <img src={resInfo?.urls?.small || resInfo?.preview_photos[0]?.urls?.small} className="bg-cover w-full" alt="" />
       </figure>
     </div>
   );

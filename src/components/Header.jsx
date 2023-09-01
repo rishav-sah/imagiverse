@@ -3,11 +3,14 @@ import { UserCircleIcon } from "@heroicons/react/24/solid";
 const Header = () => {
   return (
     <header className="p-4 w-full flex justify-between items-center text-slate-500">
-      <div className="w-20">
-        <img className="w-full h-full object-cover" src="https://cdn.imgbin.com/9/4/7/imgbin-photography-logo-the-photographers-gallery-design-3JUygxQxUsW8fMCGQsxViifWz.jpg" alt="logo" />
+      <div className="w-24 cursor-pointer">
+        <img className="w-full h-full object-cover" src="https://previews.123rf.com/images/pascreative/pascreative1908/pascreative190800057/128052587-camera-photography-logo-icon-vector-template.jpg" alt="logo" />
       </div>
       <nav className="flex">
         <ul className="mx-4 flex font-medium text-center">
+          <li className="mx-2">
+            <a href="#">Home</a>
+          </li>
           <li className="mx-2">
             <a href="#">About</a>
           </li>
