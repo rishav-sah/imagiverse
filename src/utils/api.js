@@ -13,9 +13,9 @@ const api = axios.create({
 });
 
 export const getPhotosList = async () => {
-  const response = await api.get("/photos/random", {
+  const response = await api.get("/photos", {
     params: {
-      count: 30,
+      per_page: 30,
     },
   });
   return response.data;
@@ -28,5 +28,10 @@ export const getCollections = async (term) => {
       per_page: 30,
     },
   });
+  return response.data;
+};
+
+export const getPhotosById = async (id) => {
+  const response = await api.get(`photos/${id}`);
   return response.data;
 };

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { getPhotosList } from "../utils/api";
-import { data } from "../utils/apiData";
 import PhotoCard from "./PhotoCard";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 
 const PhotoGrid = () => {
   const [listOfPhotos, setListOfPhotos] = useState([]);
-
-  console.log("PhotoGrid Component Rendered");
+  const [searchedPhotos, setSearchedPhotos] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -20,12 +19,20 @@ const PhotoGrid = () => {
 
   return (
     <section className="p-4 grid md:place-items-center">
-      <Search getSearchedPhotos={setListOfPhotos} />
-      <div className="sm:columns-2 md:columns-3 max-w-7xl">
+      <Search getSearchedPhotos={setSearchedPhotos} />
+      <div className="mt-8 max-w-7xl sm:columns-2 md:columns-3">
         {
-          listOfPhotos.map((res) => {
-            return (<PhotoCard key={res.id} resInfo={res} />);
-          })
+          !searchedPhotos.length
+            ? listOfPhotos?.map((res) => (
+              <Link key={res.id} to={`/photos/${res.id}`}>
+                <PhotoCard resInfo={res} />
+              </Link>
+            ))
+            : searchedPhotos?.map((res) => (
+              <Link key={res.id} to={`/photos/${res?.preview_photos[0]?.id}`}>
+                <PhotoCard resInfo={res} />
+              </Link>
+            ))
         }
       </div>
     </section>

@@ -7,7 +7,11 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-# starting boilerplate
+## ImagiVerse Web Application
+- A stock photography web application with low-level system design having minimal features.
+
+### A basic boilerplate for React Application
+
 ```ImagiVerse/
 ├── public/
 │   ├── images/
@@ -32,7 +36,6 @@ Currently, two official plugins are available:
 │   │   └── ...
 │   ├── hooks/
 │   │   ├── useApi.jsx
-│   │   ├── useLocalStorage.jsx
 │   │   └── ...
 │   ├── utils/
 │   │   ├── routes.jsx
@@ -51,14 +54,20 @@ Currently, two official plugins are available:
 
 ### Planning a aplication
 - A Basic Folder structure
-- A basic UI Mockup - Header, Body, Footer (We can decide precisely according to requirement)
+- A basic UI Mockup - Header, Body, Footer (We can decide precisely later on considering the requirements).
 - Installing additional libraries/dependencies for styling, routing, http requests etc.
-- setting up the route
-- Getting to know the API documentation and planning the features of the application
+- Implementing the routes path.
+- Getting to know the API documentation and planning the features of the application taking reference from the JSON object.
 
 ### Additional Dependencies & Libraries
-- styling - tailwindcss, heroicons
-- http client - axios
-- rouitng - react-router-dom
+- Styling - tailwindcss, heroicons
+- Http Client - axios
+- Routing - react-router-dom
 
+## References
+- https://react.dev/
+- https://unsplash.com/documentation
+- https://tailwindcss.com
+- https://flowbite.com
+- ChatGPT - For writing content, code examples, etc.
   
