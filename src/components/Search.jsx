@@ -1,19 +1,12 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
-import { getCollections } from "../utils/api";
 
-const Search = ({ getSearchedPhotos }) => {
-
+const Search = ({ onSearch }) => {
   const [searchInput, setSearchInput] = useState("");
-
-  const getPhotoCollections = async (term) => {
-    const data = await getCollections(term);
-    getSearchedPhotos(data.results);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getPhotoCollections(searchInput);
+    onSearch(searchInput);
   };
 
   return (
@@ -21,23 +14,23 @@ const Search = ({ getSearchedPhotos }) => {
       <form onSubmit={handleSubmit}>
         <label
           htmlFor="default-search"
-          className="mb-2 text-sm font-medium sr-only"
+          className="sr-only mb-2 text-sm font-medium"
         ></label>
         <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <MagnifyingGlassIcon className="w-6" />
           </div>
           <input
             type="search"
             id="default-search"
-            className="outline-slate-500 border rounded-lg border-gray-300 p-4 pl-10 block w-full text-sm text-slate-500  bg-gray-50 focus:ring-slate-500 focus:border-slate-500 "
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 pl-10 text-sm text-slate-500  outline-slate-500 focus:border-slate-500 focus:ring-slate-500 "
             placeholder="Search high-resolution images"
             required
             onChange={(e) => setSearchInput(e.target.value)}
           />
           <button
             type="submit"
-            className="text-white absolute right-2.5 bottom-2.5 bg-slate-500 hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm px-4 py-2"
+            className="absolute bottom-2.5 right-2.5 rounded-lg bg-slate-500 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-slate-300"
           >
             Search
           </button>

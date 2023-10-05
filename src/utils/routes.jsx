@@ -12,23 +12,23 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <PhotoGrid />
+        element: <PhotoGrid />,
       },
       {
         path: "/photos/:id",
-        element: <PhotoInfo />
+        element: <PhotoInfo />,
       },
       {
         path: "/about",
-        element: <About />
+        element: <About />,
       },
       {
         path: "/contact",
-        element: <Contact />
-      }
+        element: <Contact />,
+      },
     ],
-    errorElement: <h1>Error Component</h1>
-  }
+    errorElement: <h1>Error Component</h1>,
+  },
 ]);
 
 export default appRouter;

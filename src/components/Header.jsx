@@ -4,14 +4,18 @@ import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
   return (
-    <header className="mx-auto p-4 max-w-7xl flex justify-between items-center text-slate-500">
+    <header className="mx-auto flex max-w-7xl items-center justify-between p-4 text-slate-500">
       <div className="w-24 cursor-pointer">
         <Link to={"/"}>
-          <img className="w-full h-full object-cover" src={LOGO_URL} alt="logo" />
+          <img
+            className="h-full w-full object-cover"
+            src={LOGO_URL}
+            alt="logo"
+          />
         </Link>
       </div>
       <nav className="flex">
-        <ul className="mx-4 flex font-medium text-center">
+        <ul className="mx-4 flex text-center font-medium">
           <li className="mx-4">
             <Link to="/">Home</Link>
           </li>
